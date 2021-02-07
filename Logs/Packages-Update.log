@@ -1,0 +1,11 @@
+
+=== Wed Feb  3 11:20:16 2021
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.doc_zh@0.1.0-preview.10
+  com.unity.messenger@1.0.7-preview
+The following packages were updated:
+  com.unity.package-manager-ui from version 2.0.7 to 2.0.8
