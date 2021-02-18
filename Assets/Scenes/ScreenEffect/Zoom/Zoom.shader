@@ -62,7 +62,7 @@ Shader "lcl/screenEffect/Zoom"
                 //当前像素到中心点的距离
                 float dis = length(dir * scale);
                 // 是否在放大镜区域
-                // fixed atZoomArea = 1-step(_Size,dis);
+                 //fixed atZoomArea = 1-step(_Size,dis);   step函数 step(a,b)当b>=a时返回1否则返回0；
                 float atZoomArea = smoothstep(_Size + _EdgeFactor,_Size,dis );
 				fixed4 col = tex2D(_MainTex, i.uv + dir * _ZoomFactor * atZoomArea );
                 //fixed4 col = tex2D(_MainTex, i.uv -float2(0.1f,0.1f) );
