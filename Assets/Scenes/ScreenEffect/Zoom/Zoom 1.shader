@@ -2,7 +2,7 @@
 // create time 2020.4.8
 // ---------------------------【放大镜特效】---------------------------
 
-Shader "lcl/screenEffect/Zoom"
+Shader "lcl/screenEffect/Zoom_1"
 {
     // ---------------------------【属性】---------------------------
     Properties
@@ -54,18 +54,19 @@ Shader "lcl/screenEffect/Zoom"
             {
 
                 //屏幕长宽比 缩放因子
-                float2 scale = float2(_ScreenParams.x / _ScreenParams.y, 1);
-                // 放大区域中心
-                float2 center = _Pos;
-                float2 dir = center-i.uv;
+                //float2 scale = float2(_ScreenParams.x / _ScreenParams.y, 1);
+                //// 放大区域中心
+                //float2 center = _Pos;
+                //float2 dir = center-i.uv;
                 
-                //当前像素到中心点的距离
-                float dis = length(dir * scale);
-                // 是否在放大镜区域
-                // fixed atZoomArea = 1-step(_Size,dis);
-                float atZoomArea = smoothstep(_Size + _EdgeFactor,_Size,dis );
-				fixed4 col = tex2D(_MainTex, i.uv + dir * _ZoomFactor * atZoomArea );
-                //fixed4 col = tex2D(_MainTex, i.uv -float2(0.1f,0.1f) );
+                ////当前像素到中心点的距离
+                //float dis = length(dir * scale);
+                //// 是否在放大镜区域
+                //// fixed atZoomArea = 1-step(_Size,dis);
+                //float atZoomArea = smoothstep(_Size + _EdgeFactor,_Size,dis );
+
+               // fixed4 col = tex2D(_MainTex, i.uv + dir * _ZoomFactor * atZoomArea );
+                fixed4 col = tex2D(_MainTex, i.uv-fixed2(0.1f,0) );
                 return col;
             }
             ENDCG
